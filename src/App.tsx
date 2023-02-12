@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {IPeople} from "./types/stateTypes";
 import List from "./components/List";
+import AddPeople from "./components/AddPeople";
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
         <div className='container'>
             <h4 className="alert alert-info">مدیریت اشخاص</h4>
             <List peoples={peoples}/>
+            <AddPeople peoples={peoples} setPeoples={setPeoples}/>
         </div>
     )
 }
