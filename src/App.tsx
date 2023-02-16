@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {IPeople} from "./types/stateTypes";
 import List from "./components/List";
-import AddPeople from "./components/AddPeople";
+import Add from "./components/Add";
 
 const App = () => {
 
@@ -29,8 +29,8 @@ const App = () => {
     return (
         <div className='container'>
             <h4 className="alert alert-info">مدیریت اشخاص</h4>
-            <List peoples={peoples}/>
-            <AddPeople peoples={peoples} setPeoples={setPeoples}/>
+            <List peoples={peoples} setPeoples={setPeoples}/>
+            <Add peoples={peoples} setPeoples={setPeoples}/>
         </div>
     )
 }

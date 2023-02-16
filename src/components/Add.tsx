@@ -6,7 +6,7 @@ interface IProps {
     setPeoples: Dispatch<SetStateAction<IPeople[]>>
 }
 
-const AddPeople: FC<IProps> = ({peoples, setPeoples}) => {
+const Add: FC<IProps> = ({peoples, setPeoples}) => {
 
     // variables
     const [fullName, setFullName] = useState<string>("")
@@ -34,9 +34,11 @@ const AddPeople: FC<IProps> = ({peoples, setPeoples}) => {
             return alert("عکس الزامی می باشد.")
         }
         setPeoples([...peoples, {
-            id: 85,
+            id: Math.floor(Math.random() * 100000),
             img_url,
-            bio, fullName, age: Number(age)
+            bio,
+            fullName,
+            age: Number(age)
         }])
         handleResetState()
     }
@@ -57,4 +59,4 @@ const AddPeople: FC<IProps> = ({peoples, setPeoples}) => {
         </div>
     )
 }
-export default AddPeople
+export default Add
