@@ -1,4 +1,5 @@
 import {useState} from "react";
+import List from "./components/List/List";
 
 interface IState {
     peoples: {
@@ -25,6 +26,7 @@ const App = () => {
     return (
         <div className="container">
             <div className="alert alert-info">مدیریت اشخاص</div>
+            <List peoples={peoples}/>
         </div>
     )
 }
