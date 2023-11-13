@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface IState {
+    peoples: {
+        id: number;
+        fullname: string;
+        age: number;
+        img_url: string;
+        bio?: string
+    }[]
 }
 
-export default App;
+const App = () => {
+
+    const [peoples, setPeoples] = useState<IState["peoples"]>([
+        {
+            id: 0,
+            fullname: "مهدی فرشباف",
+            age: 31,
+            img_url: "https://toplearn.com/img/user/teachers/25927_691bfe64-c650-436c-ae70-050126856e1e_%D8%B9%D9%84%DB%8C_%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C.png",
+            bio: "طراح و توسعه دهنده ی وب"
+        }
+    ])
+
+    return (
+        <div className="container">
+            <div className="alert alert-info">مدیریت اشخاص</div>
+        </div>
+    )
+}
+export default App
